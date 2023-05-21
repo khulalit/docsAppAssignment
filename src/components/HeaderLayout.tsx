@@ -6,7 +6,7 @@ export default function HeaderLayout({left,middle,right,bottom}:{left:React.Reac
         <div className='flex '>
             <div className=' p-3'>{left}</div>
             <div className='flex-[6] self-center'>{middle}</div>
-            <div className='flex-[2]  flex justify-center items-center'>
+            <div className='flex-[2]  flex justify-end px-2 items-center'>
                 {right}
             </div>
         </div>

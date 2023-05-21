@@ -7,10 +7,10 @@ import { saveAs } from 'file-saver';
 
 export default function Menu() {
     const [openMenu,setOpenMenu] = useState(false);
-
     const doc = useSelector((state:any)=>state.doc.value)
     const fileName = useSelector((state:any)=>state.fileName.value)
     const margin = useSelector((state:any)=>state.margin.value)
+
     function Export2Word(doc:string, fileName:string){
         const preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
         const postHtml = "</body></html>";
@@ -19,27 +19,8 @@ export default function Menu() {
         const blob = new Blob(['\ufeff', html], {
             type: 'application/msword'
         });
-        saveAs(blob,fileName+'.doc')
+        console.log(saveAs(blob,fileName+'.doc'))
     }
-
-    // const convertDocToHtml = async (file: File): Promise<string> => {
-    //     const arrayBuffer = await file.arrayBuffer();
-    //     const options = {};
-    
-    //     const result = await Mammoth.extractRawText({ arrayBuffer });
-    //     return result.value;
-    // };
-    
-    // const handleConversion = (docFile:any) => {
-    //     convertDocToHtml(docFile)
-    //     .then((htmlContent) => {
-    //         console.log(htmlContent);
-    //         // Use the converted HTML content as needed
-    //     })
-    //     .catch((error) => {
-    //         console.error(error);
-    //     });
-    // };
     function printDivToPdf(divId:any, fileName:any,margin:any) {
         const element = document.getElementsByClassName(divId);
         if (element) {
