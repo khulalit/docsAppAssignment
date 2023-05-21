@@ -69,6 +69,8 @@ export default function Menu() {
                     <input type="file" id='fileup' style={{display:"none"}} />
                 </div> :<li>
                 <span onClick={(e:any)=>{
+                    if(e.target.innerHTML === 'About')
+                        window.open('https://github.com/khulalit/docsAppAssignment','_blank')
                     if(e.target.innerHTML === 'Download')
                         Export2Word(doc,fileName)
                     if(e.target.innerHTML === 'New Document')
