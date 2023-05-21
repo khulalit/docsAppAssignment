@@ -1,0 +1,12 @@
+/* .ql-toolbar{
+    display: none;
+} */
+.ql-custom-font{
+    display: inline-block !important;
+}
+.aside{
+    position: absolute;
+    width: 400px;
+    height: 100vh;
+    right: 0;
+}
